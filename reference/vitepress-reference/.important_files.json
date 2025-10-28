@@ -1,0 +1,12 @@
+[
+  "package.json",
+  "wrangler.toml",
+  ".pages.yml",
+  ".important_files.json",
+  ".redacted_files.json",
+  ".donttouch_files.json",
+  "vite.config.ts",
+  "worker/index.ts",
+  "docs/.vitepress/config.ts",
+  "docs/.vitepress/theme/index.ts"
+]

@@ -1,0 +1,93 @@
+# .pages.yml
+
+media:
+  # Uploaded assets land in VitePress' public dir so they’re served at /uploads/*
+  input: public/uploads
+  output: /uploads
+  allowed:
+    - .png
+    - .jpg
+    - .jpeg
+    - .gif
+    - .svg
+    - .webp
+
+content:
+  # -------- Docs (tree of markdown files under docs/) --------
+  - name: docs
+    label: Docs
+    type: collection
+    path: docs
+    format: yaml-frontmatter
+    view:
+      layout: tree         # mirrors folder structure
+      primary: title       # which field to show as item label
+    fields:
+      - name: title
+        label: Title
+        type: text
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: sidebar
+        label: Sidebar
+        type: select
+        help: "VitePress frontmatter: 'sidebar: auto' or false"
+      - name: outline
+        label: Outline
+        type: select
+        help: "VitePress frontmatter: outline depth or false"
+      - name: draft
+        label: Draft
+        type: boolean
+        of:
+          type: text
+      - name: nav
+        label: Show in Top Nav
+        type: boolean
+        help: "If your theme reads 'nav' from frontmatter"
+      - name: body
+        label: Body
+        type: rich-text
+        target: body        # write below frontmatter in the .md
+
+  # -------- Blog (optional /docs/blog/*) --------
+  - name: blog
+    label: Blog
+    type: collection
+    path: docs/blog
+    format: yaml-frontmatter
+    view:
+      layout: list
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: text
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: author
+        label: Author
+        type: text
+      - name: description
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+      - name: tags
+        label: Tags
+        type: list
+        of:
+          type: text
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: body
+        label: Body
+        type: rich-text
+        target: body
