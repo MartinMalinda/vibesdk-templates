@@ -45,4 +45,12 @@ export default defineConfig({
 
   // Clean URL generation
   cleanUrls: true,
+  // --- Vite Dev Server Settings ---
+  vite: {
+    server: {
+      host: "0.0.0.0",
+      port: process.env.PORT ? Number(process.env.PORT) : 5173,
+      allowedHosts: true,
+    },
+  },
 });
