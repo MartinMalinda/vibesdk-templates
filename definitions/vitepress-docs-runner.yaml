@@ -1,0 +1,6 @@
+name: "vitepress-docs-runner"
+description: "Vitepress application with vue components"
+base_reference: "vitepress-reference"
+# Patch package.json to match original template name
+package_patches:
+  name: "vitepress-docs-runner"
