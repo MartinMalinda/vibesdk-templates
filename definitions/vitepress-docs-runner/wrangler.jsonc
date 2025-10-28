@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vitepress-docs-runner",
+  "compatibility_date": "2025-04-24",
+  "site": {
+    "bucket": "dist",
+  },
+}
